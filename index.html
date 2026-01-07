@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SecureGen | Password Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="flex items-center justify-center min-h-screen p-4 overflow-hidden">
+    
+    <div class="fixed inset-0 z-0">
+        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070" 
+             alt="Cyber Security Background" 
+             class="w-full h-full object-cover">
+        <div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-md p-8 bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl text-white">
+        <h1 class="text-3xl font-extrabold text-center mb-8 tracking-tight text-indigo-300">SecureGen</h1>
+
+        <div class="relative mb-8">
+            <input type="text" id="passwordDisplay" readonly 
+                class="w-full bg-black/40 border border-white/10 rounded-2xl p-4 pr-14 text-xl font-mono text-indigo-200 focus:outline-none"
+                placeholder="P4ssw0rd!">
+            <button id="copyBtn" class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                </svg>
+            </button>
+        </div>
+
+        <div class="mb-8">
+            <div class="flex justify-between items-center mb-3">
+                <label class="text-sm font-semibold uppercase tracking-wider">Length</label>
+                <span id="lengthLabel" class="text-2xl font-bold text-indigo-400">16</span>
+            </div>
+            <input type="range" id="lengthSlider" min="8" max="50" value="16" 
+                class="w-full h-2 bg-indigo-900/50 rounded-lg appearance-none cursor-pointer accent-indigo-500">
+        </div>
+
+        <div class="grid grid-cols-1 gap-4 mb-8">
+            <label class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5 cursor-pointer hover:bg-white/10 transition-all">
+                <span>Uppercase (A-Z)</span>
+                <input type="checkbox" id="uppercase" checked class="w-5 h-5 accent-indigo-500">
+            </label>
+            <label class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5 cursor-pointer hover:bg-white/10 transition-all">
+                <span>Lowercase (a-z)</span>
+                <input type="checkbox" id="lowercase" checked class="w-5 h-5 accent-indigo-500">
+            </label>
+            <label class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5 cursor-pointer hover:bg-white/10 transition-all">
+                <span>Numbers (0-9)</span>
+                <input type="checkbox" id="numbers" checked class="w-5 h-5 accent-indigo-500">
+            </label>
+            <label class="flex items-center justify-between p-3 bg-white/5 rounded-xl border border-white/5 cursor-pointer hover:bg-white/10 transition-all">
+                <span>Symbols (!@#$)</span>
+                <input type="checkbox" id="symbols" class="w-5 h-5 accent-indigo-500">
+            </label>
+        </div>
+
+        <button id="generateBtn" 
+            class="w-full bg-gradient-to-r from-indigo-600 to-blue-600 hover:from-indigo-500 hover:to-blue-500 text-white font-bold py-4 rounded-2xl shadow-lg transform active:scale-95 transition-all">
+            GENERATE SECURE PASSWORD
+        </button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
